@@ -1,0 +1,52 @@
+<form action="/questions/edit" method="POST">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <div class="row text-left">
+    <div class="columns small-12 hide">
+      <label>
+        ID
+        <input name="id" type="string" value="<%= @question.id %>">
+      </label>
+    </div>
+    <div class="columns small-12">
+      <label>
+        Lesson #
+        <input name="lesson" type="number" min="0" value="<%= @question.lesson %>">
+      </label>
+    </div>
+    <div class="columns small-12">
+      <label>
+        Question
+        <input name="question" type="text" value="<%= @question.question %>">
+      </label>
+    </div>
+  </div>
+  <div class="row text-left">
+    <div class="columns small-6">
+      <label>
+        Wrong Answer 1
+        <input name="wAns_1" type="text" value="<%= @question.answerW1 %>">
+      </label>
+    </div>
+    <div class="columns small-6">
+      <label>
+        Wrong Answer 2
+        <input name="wAns_2" type="text" value="<%= @question.answerW2 %>">
+      </label>
+    </div>
+    <div class="columns small-6">
+      <label>
+        Wrong Answer 3
+        <input name="wAns_3" type="text" value="<%= @question.answerW3 %>">
+      </label>
+    </div>
+    <div class="columns small-6">
+      <label>
+        Right Answer
+        <input name="rAns" type="text" value="<%= @question.answerR %>">
+      </label>
+    </div>
+  </div>
+  <div class="row">
+    <input type="submit" class="button" value="Submit">
+  </div>
+</form>

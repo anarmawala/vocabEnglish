@@ -1,0 +1,41 @@
+<div class="row text-center">
+  <a class="button primary" href="/questions/new">
+    Create a Question
+  </a>
+  <br>
+  <a class="button primary" href="/home">
+    Home
+  </a>
+</div>
+<div class="row text-left">
+  <% Question.all.each do |question| %>
+    <div class="row">
+      <div class="columns small-12">
+        <h3><%= question.lesson %>: <%= question.question %></h3>
+      </div>
+      <div class="columns small-6">
+        <h3><b>W1</b>: <%= question.answerW1 %></h3>
+      </div>
+      <div class="columns small-6">
+        <h3><b>W2</b>: <%= question.answerW2 %></h3>
+      </div>
+      <div class="columns small-6">
+        <h3><b>W3</b>: <%= question.answerW3 %></h3>
+      </div>
+      <div class="columns small-6">
+        <h3><b>R</b>: <%= question.answerR %></h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="columns small-12">
+        <a class="button primary" href="/questions/edit/<%= question.id %>">
+          Edit
+        </a>
+        <a class="button alert" href="/questions/delete/<%= question.id %>">
+          Delete
+        </a>
+      </div>
+    </div>
+    <hr>
+  <% end %>
+</div>

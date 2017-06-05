@@ -8,6 +8,23 @@ Rails.application.routes.draw do
   get '/home', {:controller => "questions", :action => "setup"}
   get '/quiz', {:controller => "questions", :action => "bank"}
   get '/check', {:controller => "questions", :action => "check"}
+  
+  #QUESTION DATABASE
+  #Create
+  get '/questions/new', {:controller => 'questions', :action => 'newForm'}
+  post '/questions/new', {:controller => 'questions', :action => 'add'}
+  
+  #Read
+  get '/questions', {:controller => 'questions', :action => 'index'} 
+  
+  #Update
+  get '/questions/edit/:id', {:controller => 'questions', :action => 'editForm'}
+  post '/questions/edit/', {:controller => 'questions', :action => 'edit'}
+    
+  #Delete
+  get '/questions/delete/:id', {:controller => 'questions', :action => 'delete'}
+  
+  
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
