@@ -3,20 +3,27 @@ class QuestionsController < ApplicationController
   $questionBank = {
     "1" => [
       {
-        question: "Which one says yes?",
-        answerW1: "NO",
-        answerW2: "NO",
-        answerW3: "NO",
-        answerR: "YES",
+        question: "Define arrogaate",
+        answerW1: "to avoid, shun, keep away from",
+        answerW2: "to imitate with the intent of of equalling or surpassing the model",
+        answerW3: "to work on excessively, to thrash soundly",
+        answerR: "to claim or take without right",
+      },
+      {
+        question: "Pard of speech of germane",
+        answerW1: "verb",
+        answerW2: "noun",
+        answerW3: "action",
+        answerR: "adjective",
       },
     ],
     "2" => [
       {
-        question: "Which one says no?",
-        answerW1: "YES",
-        answerW2: "YES",
-        answerW3: "YES",
-        answerR: "NO",
+        question: "Pard of speech of histrionic",
+        answerW1: "verb",
+        answerW2: "noun",
+        answerW3: "action",
+        answerR: "adjective",
       },
     ],
   }

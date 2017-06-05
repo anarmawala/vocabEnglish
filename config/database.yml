@@ -4,7 +4,7 @@ development:
  database: my_app_development
  pool: 5
  username: root
- password:
+ password: admin
 
 test:
   adapter: sqlite3
