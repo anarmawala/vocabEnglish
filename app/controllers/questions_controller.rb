@@ -46,4 +46,15 @@ class QuestionsController < ApplicationController
     render 'quiz'
   end
   
+  def check
+    score = 0
+    for n in 0..$currentQs.length - 1
+      if params["#{n}"] == "right"
+        score += 1
+      end
+    end
+    flash[:sucess] = "You scored #{score} out of #{$currentQs.length}."
+    render 'score'
+  end
+  
 end

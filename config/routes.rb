@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   
   get '/home', {:controller => "questions", :action => "setup"}
   get '/quiz', {:controller => "questions", :action => "bank"}
+  get '/check', {:controller => "questions", :action => "check"}
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 

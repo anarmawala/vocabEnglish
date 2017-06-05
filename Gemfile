@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+gem 'mysql2'
 gem 'pg'
 #Foundation
 gem 'foundation-rails'
