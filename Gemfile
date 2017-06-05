@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-
+#Postgres
+gem 'pg', '~> 0.18.4'
 #Foundation
 gem 'foundation-rails'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
