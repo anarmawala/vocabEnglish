@@ -1,0 +1,14 @@
+<form action="/quiz">
+  <div class="row">
+    <fieldset class="small-12 columns">
+      <legend>What lessons would you like to study today?</legend>
+      <% @lessons.each do |lesson| %>
+        <input name="<%= lesson %>" type="checkbox"><label for="checkbox1">Lesson <%= lesson %></label>
+      <% end %>
+    </fieldset>
+  </div>
+  <div class="small-12 columns">
+      <input type="submit" class="button" value="Submit">
+  </div>
+  
+</form>

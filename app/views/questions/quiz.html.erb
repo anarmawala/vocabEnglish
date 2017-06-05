@@ -1,0 +1,36 @@
+
+<form action="dsafjkdfsa">
+  <div class="row text-left">
+    <% $currentQs.each do |question| %> 
+      
+      <fieldset class="large-12 columns">
+        <legend><h2><%= question[:question] %></h2></legend>
+        <% order = rand(4)%>
+        <% if order == 0 %>
+          <input type="radio" name="<%= $currentQs.index(question) %>" value="wrong" required><label for="wrong"><%= question[:answerW1] %></label><br>
+          <input type="radio" name="<%= $currentQs.index(question) %>" value="wrong"><label for="wrong"><%= question[:answerW2] %></label><br>
+          <input type="radio" name="<%= $currentQs.index(question) %>" value="wrong"><label for="wrong"><%= question[:answerW3] %></label><br>
+          <input type="radio" name="<%= $currentQs.index(question) %>" value="right"><label for="right"><%= question[:answerR] %></label><br>
+        <% elsif order == 1 %>
+          <input type="radio" name="<%= $currentQs.index(question) %>" value="wrong" required><label for="wrong"><%= question[:answerW1] %></label><br>
+          <input type="radio" name="<%= $currentQs.index(question) %>" value="wrong"><label for="wrong"><%= question[:answerW2] %></label><br>
+          <input type="radio" name="<%= $currentQs.index(question) %>" value="right"><label for="right"><%= question[:answerR] %></label><br>
+          <input type="radio" name="<%= $currentQs.index(question) %>" value="wrong"><label for="wrong"><%= question[:answerW3] %></label><br>
+        <% elsif order == 2 %>
+          <input type="radio" name="<%= $currentQs.index(question) %>" value="wrong" required><label for="wrong"><%= question[:answerW1] %></label><br>
+          <input type="radio" name="<%= $currentQs.index(question) %>" value="right"><label for="right"><%= question[:answerR] %></label><br>
+          <input type="radio" name="<%= $currentQs.index(question) %>" value="wrong"><label for="wrong"><%= question[:answerW2] %></label><br>
+          <input type="radio" name="<%= $currentQs.index(question) %>" value="wrong"><label for="wrong"><%= question[:answerW3] %></label><br>
+        <% elsif order == 3 %>
+          <input type="radio" name="<%= $currentQs.index(question) %>" value="right"><label for="right"><%= question[:answerR] %></label><br>
+          <input type="radio" name="<%= $currentQs.index(question) %>" value="wrong" required><label for="wrong"><%= question[:answerW1] %></label><br>
+          <input type="radio" name="<%= $currentQs.index(question) %>" value="wrong"><label for="wrong"><%= question[:answerW2] %></label><br>
+          <input type="radio" name="<%= $currentQs.index(question) %>" value="wrong"><label for="wrong"><%= question[:answerW3] %></label><br>
+        <% end %>
+      </fieldset>
+    <% end %>
+    <div class="input-group-button">
+      <input type="submit" class="button" value="Submit">
+    </div>
+  </div>
+</form>
