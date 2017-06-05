@@ -2,7 +2,7 @@
   <div class="row">
     <fieldset class="small-12 columns">
       <legend>What lessons would you like to study today?</legend>
-      <% Question.pluck(:lesson).each do |lesson| %>
+      <% Question.distinct.pluck(:lesson).each do |lesson| %>
         <input name="<%= lesson %>" type="checkbox"><label for="checkbox1">Lesson <%= lesson %></label>
       <% end %>
     </fieldset>
