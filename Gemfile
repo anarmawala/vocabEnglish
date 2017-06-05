@@ -1,6 +1,4 @@
 source 'https://rubygems.org'
-#Sqlite
-gem 'sqlite3'
 #Postgres
 gem 'pg', '~> 0.18.4'
 #Foundation
