@@ -12,12 +12,15 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    
     <div class="row text-center">
       <hr>
       <h4>AP English</h4>
       <h1>Vocabulary Quiz</h1>
       <hr>
-      <%= yield %>
     </div>
+    <%= yield %>
   </body>
 </html>

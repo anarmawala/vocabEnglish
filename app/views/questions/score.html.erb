@@ -1,9 +1,11 @@
-<% flash.each do |key, value| %>
-  <div class="<%= flash_class(key) %>">
-    <%= value %>
-  </div>
-<% end %>
-
-<a class="button primary" href="/home">
-  Start Again
-</a>
+<div class="row text-center">
+  <% flash.each do |key, value| %>
+    <div class="<%= flash_class(key) %>">
+      <%= value %>
+    </div>
+  <% end %>
+  
+  <a class="button primary" href="/home">
+    Start Again
+  </a>
+</div>

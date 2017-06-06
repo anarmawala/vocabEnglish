@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170605134121) do
+ActiveRecord::Schema.define(version: 20170606045509) do
 
   create_table "questions", force: :cascade do |t|
     t.string   "lesson",     limit: 255
@@ -22,6 +22,26 @@ ActiveRecord::Schema.define(version: 20170605134121) do
     t.text     "answerR",    limit: 65535
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
+    t.integer  "student_id", limit: 4
   end
+
+  create_table "students", force: :cascade do |t|
+    t.string   "email",                  limit: 255, default: "",    null: false
+    t.string   "encrypted_password",     limit: 255, default: "",    null: false
+    t.string   "reset_password_token",   limit: 255
+    t.datetime "reset_password_sent_at"
+    t.datetime "remember_created_at"
+    t.integer  "sign_in_count",          limit: 4,   default: 0,     null: false
+    t.datetime "current_sign_in_at"
+    t.datetime "last_sign_in_at"
+    t.string   "current_sign_in_ip",     limit: 255
+    t.string   "last_sign_in_ip",        limit: 255
+    t.datetime "created_at",                                         null: false
+    t.datetime "updated_at",                                         null: false
+    t.boolean  "admin",                              default: false
+  end
+
+  add_index "students", ["email"], name: "index_students_on_email", unique: true, using: :btree
+  add_index "students", ["reset_password_token"], name: "index_students_on_reset_password_token", unique: true, using: :btree
 
 end

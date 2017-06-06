@@ -10,6 +10,7 @@
 <div class="row text-left">
   <% Question.all.each do |question| %>
     <div class="row">
+      <p>Created By: <%= question.student.email %></p>
       <div class="columns small-12">
         <h3><%= question.lesson %>: <%= question.question %></h3>
       </div>

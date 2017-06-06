@@ -1,18 +1,32 @@
 <form action="/quiz">
-  <div class="row">
+  <div class="row text-center">
     <fieldset class="small-12 columns">
       <legend>What lessons would you like to study today?</legend>
       <% Question.distinct.pluck(:lesson).each do |lesson| %>
         <input name="<%= lesson %>" type="checkbox"><label for="checkbox1">Lesson <%= lesson %></label>
       <% end %>
     </fieldset>
-  </div>
-  <div class="small-12 columns">
-      <input type="submit" class="button success" value="Start">
+    <div class="small-12 columns">
+        <input type="submit" class="button success" value="Start">
+    </div>
   </div>
 </form>
 <div class="row text-center">
   <a class="button primary" href="/questions/new">
     Create a Question
   </a>
+  <% if student_signed_in? %>
+    <% if current_student.admin == true %>
+      <a class="button primary" href="/questions">
+        Questions
+      </a>
+    <% end %>
+  <% end %>
+  <br>
+  <% if student_signed_in? %>
+    <%= link_to "Sign Out", destroy_student_session_path, method: :delete, :class => "button alert" %>
+  <% elsif %>
+    <%= link_to "Sign In", new_student_session_path, :class => "button success" %>
+    <%= link_to "Sign Up", new_student_registration_path, :class => "button success" %>
+  <% end %>
 </div>

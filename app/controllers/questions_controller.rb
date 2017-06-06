@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
-
+  before_action :authenticate_student!, except: [:setup, :bank, :check]
+  
   def setup
     $currentQs = []
     render 'home'
@@ -35,25 +36,34 @@ class QuestionsController < ApplicationController
   end
   
   def add
-    newQuestion = Question.new
+    newQuestion = current_student.questions.build
     newQuestion.lesson = params[:lesson]
     newQuestion.question = params[:question]
     newQuestion.answerW1 = params[:wAns_1]
     newQuestion.answerW2 = params[:wAns_2]
     newQuestion.answerW3 = params[:wAns_3]
     newQuestion.answerR = params[:rAns]
+    newQuestion.student_id = current_student.id
     
     newQuestion.save
     redirect_to '/home'
   end
   
   def index
-    render 'indexQuestion'
+    if current_student.admin == true
+      render 'indexQuestion'
+    else
+      redirect_to '/home'
+    end
   end
   
   def editForm
-    @question = Question.find(params[:id])
-    render 'editQuestion'
+    if Question.find(params[:id]).student == current_student
+      @question = Question.find(params[:id])
+      render 'editQuestion'
+    else
+      redirect_to '/home'
+    end
   end
   
   def edit
@@ -70,8 +80,12 @@ class QuestionsController < ApplicationController
   end
   
   def delete
-    Question.find(params[:id]).destroy
-    redirect_to '/questions'
+    if current_student.admin == true
+      Question.find(params[:id]).destroy
+      redirect_to '/questions'
+    else
+      redirect_to '/home'
+    end
   end
   
 end

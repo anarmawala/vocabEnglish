@@ -1,5 +1,9 @@
 source 'https://rubygems.org'
+#Devise
+gem 'devise'
+#MySQL
 gem 'mysql2'
+#Postgres
 gem 'pg'
 #Foundation
 gem 'foundation-rails'
