@@ -7,10 +7,10 @@ class QuestionsController < ApplicationController
   end
   
   def bank
-    Question.pluck(:lesson).each do |lesson|
-      if params["#{lesson}"] == "on"
+    Question.uniq.pluck(:lesson).each do |lessonP|
+      if params["#{lessonP}"] == "on"
         Question.all.each do |question|
-          if question.lesson == lesson
+          if question.lesson == lessonP
             $currentQs << question
           end
         end

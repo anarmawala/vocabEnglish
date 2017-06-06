@@ -2,39 +2,32 @@
   <a class="button primary" href="/questions/new">
     Create a Question
   </a>
-  <br>
   <a class="button primary" href="/home">
     Home
   </a>
 </div>
 <div class="row text-left">
-  <% Question.all.each do |question| %>
-    <div class="row">
-      <p>Created By: <%= question.student.email %></p>
-      <div class="columns small-12">
-        <h3><%= question.lesson %>: <%= question.question %></h3>
+  <% Question.order(:lesson, :student_id).all.each do |question| %>
+    <div class="row" style="border-radius:5px;background-color:lightgray;padding:5px;">
+      <div class="columns small-12 medium-10">
+        <h4>Created By: <%= question.student.email %></h4>
+        <h4>Lesson: <%= question.lesson %></h4>
+        <h3><b><%= question.question %></b></h3>
       </div>
-      <div class="columns small-6">
-        <h3><b>W1</b>: <%= question.answerW1 %></h3>
-      </div>
-      <div class="columns small-6">
-        <h3><b>W2</b>: <%= question.answerW2 %></h3>
-      </div>
-      <div class="columns small-6">
-        <h3><b>W3</b>: <%= question.answerW3 %></h3>
-      </div>
-      <div class="columns small-6">
-        <h3><b>R</b>: <%= question.answerR %></h3>
-      </div>
-    </div>
-    <div class="row">
-      <div class="columns small-12">
+      <div class="columns small-12 medium-2">
+        <br>
         <a class="button primary" href="/questions/edit/<%= question.id %>">
           Edit
         </a>
         <a class="button alert" href="/questions/delete/<%= question.id %>">
           Delete
         </a>
+      </div>
+      <div class="columns small-12 medium-12" >
+        <h4><b>W:</b> <%= question.answerW1 %></h4>
+        <h4><b>W:</b> <%= question.answerW2 %></h4>
+        <h4><b>W:</b> <%= question.answerW3 %></h4>
+        <h4><b>R:</b> <%= question.answerR %></h4>
       </div>
     </div>
     <hr>
