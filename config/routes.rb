@@ -5,7 +5,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'questions#setup'
   
-  get '/home', {:controller => "questions", :action => "setup"}
+  get '/', {:controller => "questions", :action => "setup"}
   get '/quiz', {:controller => "questions", :action => "bank"}
   get '/check', {:controller => "questions", :action => "check"}
   get '/app_customization', {:controller => "application", :action => "customizeForm"}

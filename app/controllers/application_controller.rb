@@ -8,7 +8,7 @@ class ApplicationController < ActionController::Base
     if current_student.admin == true
       render 'customizationForm'
     else
-      redirect_to '/home'
+      redirect_to root_path
     end
   end
   
@@ -17,9 +17,9 @@ class ApplicationController < ActionController::Base
       $title = params[:title]
       $name = params[:name]
       $type = params[:type]
-      redirect_to '/home'
+      redirect_to root_path
     else
-      redirect_to '/home'
+      redirect_to root_path
     end
   end
   

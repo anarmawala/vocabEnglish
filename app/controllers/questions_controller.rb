@@ -46,23 +46,23 @@ class QuestionsController < ApplicationController
     newQuestion.student_id = current_student.id
     
     newQuestion.save
-    redirect_to '/home'
+    redirect_to root_path
   end
   
   def index
     if current_student.admin == true
       render 'indexQuestion'
     else
-      redirect_to '/home'
+      redirect_to root_path
     end
   end
   
   def editForm
-    if Question.find(params[:id]).student == current_student
+    if current_student.admin == true
       @question = Question.find(params[:id])
       render 'editQuestion'
     else
-      redirect_to '/home'
+      redirect_to root_path
     end
   end
   
@@ -84,7 +84,7 @@ class QuestionsController < ApplicationController
       Question.find(params[:id]).destroy
       redirect_to '/questions'
     else
-      redirect_to '/home'
+      redirect_to root_path
     end
   end
   
