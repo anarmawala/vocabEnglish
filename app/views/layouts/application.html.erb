@@ -32,8 +32,8 @@
     
     <div class="row text-center">
       <hr>
-      <h4>AP English</h4>
-      <h1>Vocabulary Quiz</h1>
+      <h4><%= $title ? $title : "Class" %></h4>
+      <h1><%= $name ? $name : "Vocabulary Quiz" %></h1>
       <hr>
     </div>
     <%= yield %>

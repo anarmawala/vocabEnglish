@@ -1,0 +1,27 @@
+<form action="/app_customization" method="POST">
+  <%= hidden_field_tag :authenticity_token, form_authenticity_token %>
+  <div class="row">
+    <div class="small-12 medium-6 columns">
+      <label>Class Name
+        <input type="text" name="title" value="<%= $title %>">
+      </label>
+    </div>
+    <div class="small-12 medium-6 columns">
+      <label>App Title
+        <input type="text" name="name" value="<%= $name %>">
+      </label>
+    </div>
+    <div class="small-12 columns">
+      <fieldset class="large-6 columns">
+        <legend>Lesson Type Name</legend>
+        <input type="radio" name="type" value="text" <%= :checked if $type == "text" %>>
+        <label>Text</label>
+        <input type="radio" name="type" value="number" <%= :checked if $type == "number" %>>
+        <label>Number</label>
+      </fieldset>
+    </div>
+    <div class="columns small-12">
+      <input type="submit" class="button" value="Submit">
+    </div>
+  </div>
+</form>

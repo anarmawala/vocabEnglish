@@ -9,8 +9,8 @@
     </div>
     <div class="columns small-12">
       <label>
-        Lesson #
-        <input name="lesson" type="number" min="0" value="<%= @question.lesson %>">
+        Lesson
+        <input name="lesson" type="<%= $type ? $type :"number" %>" min="0" value="<%= @question.lesson %>">
       </label>
     </div>
     <div class="columns small-12">

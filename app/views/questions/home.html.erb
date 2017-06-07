@@ -12,6 +12,13 @@
   </div>
 </form>
 <div class="row text-center">
+  <% if student_signed_in? %>
+    <% if current_student.admin == true %>
+      <a class="button secondary" href="/app_customization">
+        Customize Classroom
+      </a>
+    <% end %>
+  <% end %>
   <a class="button primary" href="/questions/new">
     Create a Question
   </a>

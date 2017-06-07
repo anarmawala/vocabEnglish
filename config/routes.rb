@@ -8,6 +8,8 @@ Rails.application.routes.draw do
   get '/home', {:controller => "questions", :action => "setup"}
   get '/quiz', {:controller => "questions", :action => "bank"}
   get '/check', {:controller => "questions", :action => "check"}
+  get '/app_customization', {:controller => "application", :action => "customizeForm"}
+  post '/app_customization', {:controller => "application", :action => "customize"}
   
   #QUESTION DATABASE
   #Create

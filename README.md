@@ -9,3 +9,9 @@ Christian Buenaventura
 Mary Rose O'Shea<br>
 Brenda Remess<br>
 Teriah Abrams<br>
+
+## Pilot Classes
+AP Bio 18 - **Myers**<br>
+AP Stats 17 - **Iselin**<br>
+AP Stats 18 - **Iselin**<br>
+AP English 17 - **O'Shea**<br>
